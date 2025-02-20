@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_application_1/Flutter%20APi/Api_program/Shared_Api_login.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_dev/Flutter_Api/Api_program/shared_postApi.dart';
+import 'package:flutter_dev/Flutter_Api/Api_Tasks/Splash_Screen.dart';
+// import 'package:flutter_dev/Flutter_Api/Api_program/shared_postApi.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:hive_flutter/hive_flutter.dart';
-// import 'package:path_provider/path_provider.dart' as path;
-// import 'package:hive/hive.dart';
+
 
 void main() async {
   //for hive database
@@ -34,12 +32,11 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Dev',
-          theme: ThemeData(
+          title: 'Flutter Dev',theme: ThemeData(
             primarySwatch: Colors.blue,
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          home:shared_login(),
+          home:Splash(),
         );
       },
     );
