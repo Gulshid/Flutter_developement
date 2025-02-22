@@ -1,10 +1,10 @@
 
 import 'package:hive/hive.dart';
-// part 'Hive_notes_model.g.dart';
+part 'Hive_notes_model.g.dart';
 @HiveType(typeId: 0)
 
 
-class notes_1 {
+class notes_1  extends HiveObject{
   @HiveField(0)
   String title;
 
