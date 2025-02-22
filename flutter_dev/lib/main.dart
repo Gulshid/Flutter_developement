@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_dev/Flutter_Api/Api_Tasks/Splash_Screen.dart';
-// import 'package:flutter_dev/Flutter_Api/Api_program/shared_postApi.dart';
+import 'package:flutter_dev/Flutter_Api/Api_program/hive_program_2.dart';
+// import 'package:flutter_dev/Flutter_Api/Api_program/hive_program_2.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:hive_flutter/adapters.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:hive/hive.dart';
 
 void main() async {
   //for hive database
@@ -12,11 +14,15 @@ void main() async {
   //open the box
   // var box = await Hive.openBox('mybox');
 
-  //for Hive program
+  //for Hive program 1
   // WidgetsFlutterBinding.ensureInitialized();
   // await Hive.initFlutter();
-  // await Hive.openBox('MyBox');
+  // await Hive.openBox('Box');
 
+  //for Hive program 2
+  WidgetsFlutterBinding.ensureInitialized();
+  var dir = await getApplicationDocumentsDirectory();
+  Hive.init(dir.path);
   runApp(const MyApp());
 }
 
@@ -32,11 +38,15 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Dev',theme: ThemeData(
+          title: 'Flutter Dev',
+          theme: ThemeData(
+            appBarTheme: AppBarTheme(
+              color: Colors.blue,
+            ),
             primarySwatch: Colors.blue,
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          home:Splash(),
+          home: hive_2(),
         );
       },
     );
