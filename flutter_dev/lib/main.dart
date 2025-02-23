@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+// ignore: unnecessary_import
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_dev/Flutter_Api/Api_Models/To_do_hive_model.dart';
 // import 'package:flutter_dev/Flutter_Api/Api_Models/Hive_notes_model.dart';
 // import 'package:flutter_dev/Flutter_Api/Api_Tasks/Hive_.dart';
 import 'package:flutter_dev/Flutter_Api/Api_Tasks/hive_to_do.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:hive_flutter/adapters.dart';
+import 'package:hive_flutter/adapters.dart';
 // import 'package:path_provider/path_provider.dart';
-// import 'package:hive/hive.dart';
+// ignore: unnecessary_import
+import 'package:hive/hive.dart';
 
 void main() async {
   //for hive database
@@ -33,7 +36,23 @@ void main() async {
   // Hive.registerAdapter(notes1Adapter());
   // await Hive.openBox<notes_1>('notes');
 
+  //to do app and  Hive database
 
+  to_do_model db = to_do_model();
+
+  await Hive.initFlutter();
+  var box = await Hive.openBox('to do');
+  // ignore: unused_element
+  void initState() {
+    if (box.get('to do List') == null) {
+      db.create_initial_data();
+    
+    }
+    else{
+        db.load_data();
+    }
+    // super.initState();
+  }
   runApp(const MyApp());
 }
 
@@ -48,7 +67,6 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
-          
           debugShowCheckedModeBanner: false,
           title: 'Flutter Dev',
           theme: ThemeData(
