@@ -21,9 +21,10 @@ class Dialoge_box extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             TextField(
+              style: TextStyle(color: Colors.black),
               controller: controller,
               decoration: InputDecoration(
-                hintText: 'Enter the Task',
+                labelText: 'Enter the Task',labelStyle: TextStyle(fontSize: 20.sp,color: Colors.blue),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12.r),
                 ),

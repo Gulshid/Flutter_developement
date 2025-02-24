@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dev/Flutter_Api/Api_Models/To_do_hive_model.dart';
 import 'package:flutter_dev/Flutter_Api/Api_Tasks/Alert_dialoge.dart';
 import 'package:flutter_dev/Flutter_Api/Api_Tasks/to_do_tile.dart';
-// import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 // import 'package:hive/hive.dart';
 
 class To_do extends StatefulWidget {
@@ -16,16 +16,23 @@ class To_do extends StatefulWidget {
 
 class _To_doState extends State<To_do> {
   //reference the hive database box
-  // final _box = Hive.box('to do');
+  final _box = Hive.box('to do');
   //list of to do task
   to_do_model db = to_do_model();
+  void initState() {
+    if (_box.get('to do List') == null) {
+      db.create_initial_data();
+    }
+    else{
+        db.load_data();
+    }
+    super.initState();
+  }
+
+
   //text controller
-
-  @override
-  
-
-  // ignore: override_on_non_overriding_member
   final _controller = TextEditingController();
+  
   //function for checkbox
   void Check_Box_change(bool? value, int index) {
     setState(() {

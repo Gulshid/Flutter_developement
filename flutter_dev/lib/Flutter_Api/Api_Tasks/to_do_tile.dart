@@ -19,7 +19,7 @@ class to_do_Tile extends StatelessWidget {
           motion: StretchMotion(),
           children: [
                 SlidableAction(onPressed: delete_function,
-                icon: Icons.delete,
+               icon:Icons.delete,
                 backgroundColor: Colors.red,
                 borderRadius: BorderRadius.circular(12.r),)
           ],),
@@ -35,7 +35,11 @@ class to_do_Tile extends StatelessWidget {
               Checkbox(value: task_completed,
                onChanged: onChanged,
               activeColor: Colors.blue,),
-              Text(task_name,style: TextStyle(decoration:task_completed? TextDecoration.lineThrough:TextDecoration.none),),
+              Text(task_name,style: TextStyle(
+                color:Colors.black,
+                fontSize: 15.sp,
+                fontWeight: FontWeight.bold,
+                decoration:task_completed? TextDecoration.lineThrough:TextDecoration.none),),
             ],
           ),
         ),
