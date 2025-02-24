@@ -9,7 +9,7 @@ class to_do_model {
   void create_initial_data(){
     to_do = [
       ["Make Tutorial", false],
-      ["Make Tutorial", false],
+      ["Make Exercise ", false],
     ];
   }
 
