@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
-// ignore: unnecessary_import
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_dev/Flutter_Api/Api_Tasks/hive_to_do.dart';
-// import 'package:flutter_dev/Flutter_Api/Api_Tasks/hive_to_do.dart';
-
+import 'package:flutter_dev/State_Management/Stateful.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hive_flutter/adapters.dart';
-// import 'package:path_provider/path_provider.dart';
-import 'package:hive/hive.dart';
-// import 'package:path_provider/path_provider.dart';
 
-void main() async {
+
+void main()  {
   //for hive database
   // initialize hive local database...
   // await Hive.initFlutter();
@@ -36,9 +30,9 @@ void main() async {
   // await Hive.openBox<notes_1>('notes');
 
   //to do app and  Hive database
-  await Hive.initFlutter();
-  var box = await Hive.openBox('to do');
-  Hive.init(box.path);
+  // await Hive.initFlutter();
+  // var box = await Hive.openBox('to do');
+  // Hive.init(box.path);
   
 
   runApp(const MyApp());
@@ -62,7 +56,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          home: To_do(),
+          home: state_ful(),
         );
       },
     );
