@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_dev/State_Management/disadvan_stateful.dart';
+import 'package:flutter_dev/State_Management/Provider/count_provider.dart';
+import 'package:flutter_dev/State_Management/Screen/count_exam.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
-
-void main()  {
+void main() {
   //for hive database
   // initialize hive local database...
   // await Hive.initFlutter();
@@ -33,7 +34,6 @@ void main()  {
   // await Hive.initFlutter();
   // var box = await Hive.openBox('to do');
   // Hive.init(box.path);
-  
 
   runApp(const MyApp());
 }
@@ -48,7 +48,9 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
+        return ChangeNotifierProvider(
+          create: (_)=>CountProvider(),
+          child:MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Flutter Dev',
           theme: ThemeData(
@@ -56,8 +58,8 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          home: State_ful_disadvan(),
-        );
+          home: Counter_Example(),
+        ));
       },
     );
   }
