@@ -3,7 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_dev/State_Management/Provider/Exam_provider_1.dart';
 import 'package:flutter_dev/State_Management/Provider/Favourite_provider.dart';
 import 'package:flutter_dev/State_Management/Provider/count_provider.dart';
-import 'package:flutter_dev/State_Management/Screen/Favourite_app/favourite_screen.dart';
+import 'package:flutter_dev/State_Management/Provider/theme_changer_provider.dart';
+import 'package:flutter_dev/State_Management/Screen/dark_white_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
@@ -53,22 +54,44 @@ class MyApp extends StatelessWidget {
         return MultiProvider(
           providers: [
             //1,2,...... provider reference
-            ChangeNotifierProvider(create: (_)=>CountProvider(),),
-            ChangeNotifierProvider(create: (_)=>Example_One_Provider()),
-            ChangeNotifierProvider(create: (_)=>Favourite_app()),
-
+            ChangeNotifierProvider(create: (_) => CountProvider()),
+            ChangeNotifierProvider(create: (_) => Example_One_Provider()),
+            ChangeNotifierProvider(create: (_) => Favourite_app()),
+            ChangeNotifierProvider(create: (_) => Theme_Changer()),
           ],
-         
-          child:MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Flutter Dev',
-          theme: ThemeData(
-            appBarTheme: AppBarTheme(color: Colors.blue),
-            primarySwatch: Colors.blue,
-            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+
+          child: Builder(
+            builder: (BuildContext context) {
+            // this is reference to theme changer in state Management
+           final themeChanger = Provider.of<Theme_Changer>(context);
+              return MaterialApp(
+                debugShowCheckedModeBanner: false,
+                title: 'Flutter Dev',
+                themeMode: themeChanger.theme_Mode,
+                theme: ThemeData(
+                   brightness: Brightness.light,
+                  appBarTheme: AppBarTheme(color: Colors.blue),
+                  primarySwatch: Colors.blue,
+                  textTheme: Typography.englishLike2018.apply(
+                    fontSizeFactor: 1.sp,
+                  ),
+                ),
+
+                darkTheme: ThemeData(
+                  appBarTheme: AppBarTheme(
+                      color: Colors.teal,
+                  ),
+                  primarySwatch: Colors.deepPurple,
+                  brightness: Brightness.dark,
+                  iconTheme: IconThemeData(
+                    color: Colors.lightGreen
+                  )
+                ),
+                home: dark_white_Changer(),
+              );
+            },
           ),
-          home: Favourite_Screen(),
-        ));
+        );
       },
     );
   }
