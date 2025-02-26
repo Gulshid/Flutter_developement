@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_dev/State_Management/Provider/Exam_provider_1.dart';
+import 'package:flutter_dev/State_Management/Provider/Favourite_provider.dart';
 import 'package:flutter_dev/State_Management/Provider/count_provider.dart';
-import 'package:flutter_dev/State_Management/Screen/count_exam.dart';
+import 'package:flutter_dev/State_Management/Screen/Favourite_app/favourite_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
@@ -48,8 +50,15 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return ChangeNotifierProvider(
-          create: (_)=>CountProvider(),
+        return MultiProvider(
+          providers: [
+            //1,2,...... provider reference
+            ChangeNotifierProvider(create: (_)=>CountProvider(),),
+            ChangeNotifierProvider(create: (_)=>Example_One_Provider()),
+            ChangeNotifierProvider(create: (_)=>Favourite_app()),
+
+          ],
+         
           child:MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Flutter Dev',
@@ -58,7 +67,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          home: Counter_Example(),
+          home: Favourite_Screen(),
         ));
       },
     );
