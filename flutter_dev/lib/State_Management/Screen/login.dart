@@ -98,7 +98,7 @@ class _loginScreenState extends State<loginScreen> {
                 ),
 
                 child: Center(
-                  child: Auth_provider.loading?CircularProgressIndicator():
+                  child: Auth_provider.loading?CircularProgressIndicator(color: Colors.white,):
                   Text('login Now',style: TextStyle(color: Colors.white,fontSize: 30.sp,fontWeight: FontWeight.bold),),
                 ),
               ),
