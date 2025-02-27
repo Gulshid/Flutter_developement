@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dev/State_Management/Utills/Rouute/route_name.dart';
-import 'package:flutter_dev/State_Management/View_/home_screen.dart';
-import 'package:flutter_dev/State_Management/View_/login_screen.dart';
+import 'package:flutter_dev/State_Management/View_/home_View.dart';
+import 'package:flutter_dev/State_Management/View_/login_View.dart';
 
 class Routes {
   static Route<dynamic>  generateRoute(RouteSettings settings) {

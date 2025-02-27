@@ -5,6 +5,15 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:another_flushbar/flushbar.dart';
 
 class Utills {
+  static void fieldfocusNode(
+    BuildContext context,
+    FocusNode cuurent,
+    FocusNode next,
+  ) {
+    cuurent.unfocus();
+    FocusScope.of(context).requestFocus(next);
+  }
+
   static toastMessage(String message) {
     Fluttertoast.showToast(
       msg: message,
@@ -39,7 +48,13 @@ class Utills {
 
   static snakbar(String message, BuildContext context) {
     return ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(backgroundColor: Colors.blue, content: Text(message)),
+      SnackBar(
+        backgroundColor: Colors.blue,
+        content: Text(message),
+        padding: EdgeInsets.all(20),
+
+        //  margin: EdgeInsets.symmetric(horizontal: 20.0,vertical: 10.0),
+      ),
     );
   }
 }

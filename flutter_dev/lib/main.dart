@@ -7,6 +7,7 @@ import 'package:flutter_dev/State_Management/Provider/count_provider.dart';
 import 'package:flutter_dev/State_Management/Provider/theme_changer_provider.dart';
 import 'package:flutter_dev/State_Management/Utills/Rouute/route_name.dart';
 import 'package:flutter_dev/State_Management/Utills/Rouute/routes.dart';
+import 'package:flutter_dev/State_Management/View_Model/auth_view_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
@@ -61,6 +62,7 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider(create: (_) => Favourite_app()),
             ChangeNotifierProvider(create: (_) => Theme_Changer()),
             ChangeNotifierProvider(create: (_) => auth_provider()),
+            ChangeNotifierProvider(create: (_) => AuthViewModel()),
 
           ],
 
