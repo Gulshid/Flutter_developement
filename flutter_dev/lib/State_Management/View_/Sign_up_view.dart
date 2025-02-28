@@ -5,18 +5,15 @@ import 'package:flutter_dev/State_Management/Utills/utills.dart';
 import 'package:flutter_dev/State_Management/View_Model/auth_view_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-// import 'package:flutter_dev/State_Management/Utills/Rouute/route_name.dart';
-// import 'package:flutter_dev/State_Management/Utills/utills.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Login_Screen extends StatefulWidget {
-  const Login_Screen({super.key});
+class Sign_up extends StatefulWidget {
+  const Sign_up({super.key});
 
   @override
-  State<Login_Screen> createState() => _Login_ScreenState();
+  State<Sign_up> createState() => _Sign_upState();
 }
 
-class _Login_ScreenState extends State<Login_Screen> {
+class _Sign_upState extends State<Sign_up> {
   TextEditingController _email_controller = TextEditingController();
   TextEditingController _password_controller = TextEditingController();
 
@@ -43,26 +40,10 @@ class _Login_ScreenState extends State<Login_Screen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('login Screen View', style: TextStyle(color: Colors.white)),
+        title: Text('Sign up Screen View', style: TextStyle(color: Colors.white)),
         centerTitle: true,
       ),
-      body:
-      //this is for utils for text
-      // InkWell(
-      //   onTap: () {
-      //     Utills.toastMessage('You tapped me');
-      //     Utills.flushBarErrorMessages('Hello', context);
-      //     Utills.snakbar('Hello World', context);
-      //   },
-      //   child: Center(
-      //     child: Text(
-      //       'CLick',
-      //       style: TextStyle(color: Colors.black, fontSize: 50.sp),
-      //     ),
-      //   ),
-      // ),
-      // This is for login screen
-      Padding(
+      body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: SafeArea(
           child: Column(
@@ -146,8 +127,8 @@ class _Login_ScreenState extends State<Login_Screen> {
               ),
               SizedBox(height: 50.h),
               RoundButton(
-                title: 'login',
-                loading: authviewModel.loading,
+                title: 'Sign up',
+                loading: authviewModel.SignUp_loading,
                 onpressed: () {
                   if (_email_controller.text.isEmpty) {
                     Utills.flushBarErrorMessages(
@@ -169,18 +150,19 @@ class _Login_ScreenState extends State<Login_Screen> {
                       "email": _email_controller.text.toString(),
                       "password": _password_controller.text.toString(),
                     };
-                    authviewModel.login_api(data, context);
+                    authviewModel.SignUp_api(data, context);
                     'api hit';
                   }
                 },
               ),
+
               SizedBox(height: 20.sp),
               InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, RouteName.Sign_up);
+                  Navigator.pushNamed(context, RouteName.login);
                 },
                 child: Text(
-                  "Don't have an account? Sign Up",
+                  "Already have an account? login Now",
                   style: TextStyle(color: Colors.blue, fontSize: 15.sp),
                 ),
               ),
