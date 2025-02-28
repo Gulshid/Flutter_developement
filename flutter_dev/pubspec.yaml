@@ -63,6 +63,8 @@ dependencies:
   #Mvvm Architecture
   fluttertoast: ^8.2.12
   another_flushbar: ^1.12.30
+  #math
+  math_expressions: ^2.7.0
 dev_dependencies:
   hive_generator: ^2.0.1
   build_runner: ^2.4.15
