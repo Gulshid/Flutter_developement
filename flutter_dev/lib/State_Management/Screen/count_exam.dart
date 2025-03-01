@@ -19,6 +19,7 @@ class _Counter_ExampleState extends State<Counter_Example> {
     final count_provider = Provider.of<CountProvider>(context, listen: false);
     Timer.periodic(Duration(seconds: 3), (timer) {
       count_provider.set_count();
+      count_provider.time.minute.toString();
     });
   }
 
@@ -33,15 +34,13 @@ class _Counter_ExampleState extends State<Counter_Example> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-
-           Center(
+          Center(
             child: Consumer<CountProvider>(
               builder: (context, value, child) {
                 return Text(
                   value.count.toString(),
                   style: TextStyle(fontSize: 50.sp, color: Colors.black),
                 );
-                
               },
             ),
           ),
@@ -50,7 +49,7 @@ class _Counter_ExampleState extends State<Counter_Example> {
             child: Consumer<CountProvider>(
               builder: (context, value, child) {
                 return Text(
-                  value.count.toString(),
+                  value.time.toString(),
                   style: TextStyle(fontSize: 50.sp, color: Colors.black),
                 );
               },
