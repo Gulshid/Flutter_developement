@@ -10,34 +10,31 @@ class p1 extends StatefulWidget {
 }
 
 class _p1State extends State<p1> {
-  int increment = 100;
+  //count example
+  int _counter = 30;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyanAccent[100],
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-           increment++;
-          print(increment); 
-           });
-       
-        },
-        child: Icon(Icons.add, color: Colors.black, size: 20.sp),
+      appBar: AppBar(
+        title: Text('Stateless Widget', style: TextStyle(color: Colors.white)),
+        centerTitle: true,
       ),
-      appBar: AppBar(title: Text('State less Widget'), centerTitle: true),
 
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        // crossAxisAlignment: CrossAxisAlignment.center,
-        children: [Center(
-          child:
-           Text("$increment",style: TextStyle(color: Colors.black,fontSize: 50.sp,fontWeight: FontWeight.bold),)
-           ),
-
-          
-           ]),
+        children: [Center(child: Text('$_counter',style: TextStyle(color: Colors.black,fontSize: 60.sp),))]),
+      //flaoting action button
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+          _counter++;
+          print(_counter);
+          });
+         
+        },
+        child: Icon(Icons.add, color: Colors.black, size: 30.sp),
+      ),
     );
   }
 }
