@@ -19,7 +19,7 @@ class _Counter_ExampleState extends State<Counter_Example> {
     final count_provider = Provider.of<CountProvider>(context, listen: false);
     Timer.periodic(Duration(seconds: 3), (timer) {
       count_provider.set_count();
-      count_provider.time.minute.toString();
+
     });
   }
 
