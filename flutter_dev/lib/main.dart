@@ -5,8 +5,8 @@ import 'package:flutter_dev/State_Management/Provider/Exam_provider_1.dart';
 import 'package:flutter_dev/State_Management/Provider/Favourite_provider.dart';
 import 'package:flutter_dev/State_Management/Provider/count_provider.dart';
 import 'package:flutter_dev/State_Management/Provider/theme_changer_provider.dart';
+import 'package:flutter_dev/State_Management/Screen/Example_1.dart';
 import 'package:flutter_dev/State_Management/practise/provider/count_p.dart';
-import 'package:flutter_dev/State_Management/practise/screen/count.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
@@ -92,7 +92,7 @@ class MyApp extends StatelessWidget {
                 //     color: Colors.lightGreen
                 //   )
                 // ),
-                home:count(),
+                home:Example_1(),
            
               );
             },
