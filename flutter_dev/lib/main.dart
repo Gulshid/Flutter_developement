@@ -5,8 +5,9 @@ import 'package:flutter_dev/State_Management/Provider/Exam_provider_1.dart';
 import 'package:flutter_dev/State_Management/Provider/Favourite_provider.dart';
 import 'package:flutter_dev/State_Management/Provider/count_provider.dart';
 import 'package:flutter_dev/State_Management/Provider/theme_changer_provider.dart';
-import 'package:flutter_dev/State_Management/Screen/Example_1.dart';
 import 'package:flutter_dev/State_Management/practise/provider/count_p.dart';
+import 'package:flutter_dev/State_Management/practise/provider/opacity_Provider.dart';
+import 'package:flutter_dev/State_Management/practise/screen/opacity_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
@@ -62,6 +63,8 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider(create: (_) => Theme_Changer()),
             ChangeNotifierProvider(create: (_) => auth_provider()),
             ChangeNotifierProvider(create: (_) => CountP()),
+            ChangeNotifierProvider(create: (_) => OpacityProvider()),
+
 
           ],
 
@@ -92,7 +95,7 @@ class MyApp extends StatelessWidget {
                 //     color: Colors.lightGreen
                 //   )
                 // ),
-                home:Example_1(),
+                home:ColorChanger(),
            
               );
             },
