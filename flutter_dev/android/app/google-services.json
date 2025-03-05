@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "645469607607",
-    "project_id": "fir-73693",
-    "storage_bucket": "fir-73693.firebasestorage.app"
+    "project_number": "434311815825",
+    "project_id": "fir-832a7",
+    "storage_bucket": "fir-832a7.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:645469607607:android:46c623ebb1bd6a7cdc9f32",
+        "mobilesdk_app_id": "1:434311815825:android:e61e3e4002683fbc165530",
         "android_client_info": {
           "package_name": "com.example.flutter_dev"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBhkycPdm6KaOfygKPtRuiL49snbyrsmi4"
+          "current_key": "AIzaSyCdpQ1r25_AyY_oD0i62RaMLzVmS962nXg"
         }
       ],
       "services": {
