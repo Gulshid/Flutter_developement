@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_dev/Flutter%20UI/UI_27.dart';
+import 'package:flutter_dev/Flutter%20UI/UI_28.dart';
 import 'package:flutter_dev/State_Management/Provider/Auth_provider.dart';
 import 'package:flutter_dev/State_Management/Provider/Exam_provider_1.dart';
 import 'package:flutter_dev/State_Management/Provider/Favourite_provider.dart';
@@ -95,7 +95,7 @@ class MyApp extends StatelessWidget {
                 //     color: Colors.lightGreen
                 //   )
                 // ),
-                home:Sliverappbar(),
+                home:ShimmerEffect(),
            
               );
             },
