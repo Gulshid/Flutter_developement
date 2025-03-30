@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_dev/Flutter%20UI/UI_27.dart';
 import 'package:flutter_dev/State_Management/Provider/Auth_provider.dart';
 import 'package:flutter_dev/State_Management/Provider/Exam_provider_1.dart';
 import 'package:flutter_dev/State_Management/Provider/Favourite_provider.dart';
@@ -7,7 +8,6 @@ import 'package:flutter_dev/State_Management/Provider/count_provider.dart';
 import 'package:flutter_dev/State_Management/Provider/theme_changer_provider.dart';
 import 'package:flutter_dev/State_Management/practise/provider/count_p.dart';
 import 'package:flutter_dev/State_Management/practise/provider/opacity_Provider.dart';
-import 'package:flutter_dev/State_Management/practise/screen/opacity_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
@@ -71,13 +71,13 @@ class MyApp extends StatelessWidget {
           child: Builder(
             builder: (BuildContext context) {
             // this is reference to theme changer in state Management
-           final themeChanger = Provider.of<Theme_Changer>(context);
+            final themeChanger = Provider.of<Theme_Changer>(context);
               return MaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'Flutter Dev',
                 themeMode: themeChanger.theme_Mode,
                 theme: ThemeData(
-                   brightness: Brightness.light,
+                  brightness: Brightness.light,
                   appBarTheme: AppBarTheme(color: Colors.blue),
                   primarySwatch: Colors.blue,
                   textTheme: Typography.englishLike2018.apply(
@@ -95,7 +95,7 @@ class MyApp extends StatelessWidget {
                 //     color: Colors.lightGreen
                 //   )
                 // ),
-                home:ColorChanger(),
+                home:Sliverappbar(),
            
               );
             },
